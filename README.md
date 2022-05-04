@@ -12,4 +12,7 @@ I am working with W. Avy to convince him that a ice cream / surf shop in Oahu, H
 
 
 ## Summary
-We can see that the weather in June is both warmer and more consistent than the weather in December, as is shown by June's higher mean temperature and lower standard deviation. This does not mean the weather is unbareable in December, however. With a mean temperature of 71 degrees and a maximum temperature of 81 degrees, December conditions appear to be suitable for ice cream and surfing. If we wanted to go a step further, however, I would recommend adding the precipitaion to those months as well. It would be nice to see what the rain looks like.
+We can see that the weather in June is both warmer and more consistent than the weather in December, as is shown by June's higher mean temperature and lower standard deviation. This does not mean the weather is unbareable in December, however. With a mean temperature of 71 degrees and a maximum temperature of 81 degrees, December conditions appear to be suitable for ice cream and surfing. If we wanted to go a step further, however, I would recommend adding the temperature for our missing seasons. Right now we can see the beginning of summer (June) and winter (December) but how does the weather looks in the beginning of spring and autumn?
+
+session.query(Measurement.tobs, Measurement.date).filter(extract('month', Measurement.date) == 3).all()
+session.query(Measurement.tobs, Measurement.date).filter(extract('month', Measurement.date) == 9).all()
